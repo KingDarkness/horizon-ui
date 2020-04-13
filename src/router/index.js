@@ -1,22 +1,95 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
+  { path: '/', redirect: '/services' },
+
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/services',
+    name: 'services',
+    component: () => import('@/screens/services'),
   },
+
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/dashboard',
+    name: 'dashboard',
+    component: () => import('@/screens/dashboard'),
+  },
+
+  {
+    path: '/monitoring',
+    name: 'monitoring',
+    component: () => import('@/screens/monitoring/index'),
+  },
+
+  {
+    path: '/monitoring/:tag',
+    component: () => import('@/screens/monitoring/tag'),
+    children: [
+      {
+        path: 'jobs',
+        name: 'monitoring-jobs',
+        component: () => import('@/screens/monitoring/tag-jobs'),
+        props: { type: 'jobs' },
+      },
+      {
+        path: 'failed',
+        name: 'monitoring-failed',
+        component: () => import('@/screens/monitoring/tag-jobs'),
+        props: { type: 'failed' },
+      },
+    ],
+  },
+
+  { path: '/metrics', redirect: '/metrics/jobs' },
+
+  {
+    path: '/metrics/',
+    component: () => import('@/screens/metrics/index'),
+    children: [
+      {
+        path: 'jobs',
+        name: 'metrics-jobs',
+        component: () => import('@/screens/metrics/jobs'),
+      },
+      {
+        path: 'queues',
+        name: 'metrics-queues',
+        component: () => import('@/screens/metrics/queues'),
+      },
+    ],
+  },
+
+  {
+    path: '/metrics/:type/:slug',
+    name: 'metrics-preview',
+    component: () => import('@/screens/metrics/preview'),
+  },
+
+  {
+    path: '/recent-jobs',
+    name: 'recent-jobs',
+    component: () => import('@/screens/recentJobs/index'),
+  },
+
+  {
+    path: '/recent-jobs/:jobId',
+    name: 'recent-jobs-preview',
+    component: () => import('@/screens/recentJobs/job'),
+  },
+
+  {
+    path: '/failed',
+    name: 'failed-jobs',
+    component: () => import('@/screens/failedJobs/index'),
+  },
+
+  {
+    path: '/failed/:jobId',
+    name: 'failed-jobs-preview',
+    component: () => import('@/screens/failedJobs/job'),
   }
 ]
 
@@ -25,5 +98,13 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.name !== 'services' && !Object.keys(window.Horizon).length) {
+    next({ name: 'services' })
+  }
+  next()
+})
+
 
 export default router
