@@ -1,5 +1,5 @@
 # horizon-ui
-    horizon-ui is based on the official [Laravel Horizon](https://github.com/laravel/horizon) package.
+    horizon-ui is based on the official [Laravel Horizon](https://github.com/laravel/horizon) (v3.7.2) package.
     horizon-ui upgrade to manager mutiple laravel or lumen queues service via API
 
 ## Add services
