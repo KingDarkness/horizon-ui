@@ -8,7 +8,7 @@
       <div class="card-bg-secondary">
         <div class="d-flex">
           <div
-            class="w-25 border-right border-bottom"
+            class="w-25 border-right border-bottom cursor-pointer"
             v-for="service in services"
             :key="service.name"
             @click="selectService(service)"
@@ -47,3 +47,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.cursor-pointer {
+  cursor: pointer;
+}
+</style>
