@@ -1,6 +1,6 @@
-# horizon-ui
-    horizon-ui is based on the official [Laravel Horizon](https://github.com/laravel/horizon) (v3.7.2) package.
-    horizon-ui upgrade to manager mutiple laravel or lumen queues service via API
+# Lumen Horizon
+    Lumen Horizon is based on the official [Laravel Horizon](https://github.com/laravel/horizon) (v3.7.2) package.
+    Lumen Horizon upgrade to manager mutiple laravel or lumen queues service via API
 
 ## Add services
 On `src/screens/services.vue` add the services state like
