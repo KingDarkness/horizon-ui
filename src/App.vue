@@ -22,7 +22,7 @@
           />
         </svg>
 
-        <h4 class="mb-0 ml-2"><strong>{{ appName }}</strong> Horizon</h4>
+        <h4 class="mb-0 ml-2"><strong class="text-uppercase">{{ appName }}</strong> Horizon</h4>
 
         <button
           class="btn btn-outline-primary ml-auto"

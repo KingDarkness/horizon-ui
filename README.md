@@ -1,6 +1,20 @@
 # Lumen Horizon
-    Lumen Horizon is based on the official [Laravel Horizon](https://github.com/laravel/horizon) (v3.7.2) package.
-    Lumen Horizon upgrade to manager mutiple laravel or lumen queues service via API
+Lumen Horizon UI is based on the official [Laravel Horizon](https://github.com/laravel/horizon) (v3.7.2) package.
+
+It provides the same features as original package only the UI.
+
+Lumen Horizon UI upgrade to manager mutiple laravel or lumen queues service via API
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/KingDarkness/horizon-ui/v3/demo/light.png" width="430">
+    <img src="https://raw.githubusercontent.com/KingDarkness/horizon-ui/v3/demo/dark.png" width="430">
+</p>
+
+[Lumen Horizon](https://packagist.org/packages/kingdarkness/lumen-horizon) is based on the official [Laravel Horizon](https://github.com/laravel/horizon) (v3.7.2) package.
+
+It provides the same features as original package except the UI.
+
+Tested with **Lumen 5.8**
 
 ## Add services
 On `src/screens/services.vue` add the services state like
@@ -21,7 +35,9 @@ On `src/screens/services.vue` add the services state like
 
 ## Change dark, light theme
 On `src/main.js`
+
 dark: import './assets/sass/app-dark.scss'
+
 light: import './assets/sass/app.scss'
 
 ## Project setup
