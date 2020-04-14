@@ -1,19 +1,19 @@
 # Lumen Horizon
-    Lumen Horizon is based on the official [Laravel Horizon](https://github.com/laravel/horizon) (v3.7.2) package.
+Lumen Horizon is based on the official [Laravel Horizon](https://github.com/laravel/horizon) (v3.7.2) package.
 
-    It provides the same features as original package only the UI.
+It provides the same features as original package only the UI.
 
-    Lumen Horizon upgrade to manager mutiple laravel or lumen queues service via API
+Lumen Horizon upgrade to manager mutiple laravel or lumen queues service via API
 
-    [Lumen Horizon](https://packagist.org/packages/kingdarkness/lumen-horizon) is based on the official [Laravel Horizon](https://github.com/laravel/horizon) (v3.7.2) package.
+[Lumen Horizon](https://packagist.org/packages/kingdarkness/lumen-horizon) is based on the official [Laravel Horizon](https://github.com/laravel/horizon) (v3.7.2) package.
 
-    It provides the same features as original package except the UI.
+It provides the same features as original package except the UI.
 
-    Tested with **Lumen 5.8**
+Tested with **Lumen 5.8**
 
 <p align="center">
-    <img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1551286550/HorizonLight.png" width="430">
-    <img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1551286550/HorizonDark.png" width="430">
+    <img src="https://raw.githubusercontent.com/KingDarkness/horizon-ui/v3/demo/light.png" width="430">
+    <img src="https://raw.githubusercontent.com/KingDarkness/horizon-ui/v3/demo/dark.png" width="430">
 </p>
 
 ## Add services
