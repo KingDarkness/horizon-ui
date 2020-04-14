@@ -7,6 +7,7 @@ import './registerServiceWorker'
 import router from './router'
 import 'bootstrap';
 import './assets/sass/app-dark.scss'
+// import './assets/sass/app.scss'
 
 Vue.config.productionTip = false
 
