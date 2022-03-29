@@ -1,6 +1,6 @@
 # Lumen Horizon
 
-Lumen Horizon UI is based on the official [Laravel Horizon](https://github.com/laravel/horizon) (v3.9.3) package.
+Lumen Horizon UI is based on the official [Laravel Horizon](https://github.com/laravel/horizon) (v5.9.3) package.
 
 It provides the same features as original package only the UI.
 
