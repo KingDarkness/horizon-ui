@@ -22,11 +22,13 @@
           />
         </svg>
 
-        <h4 class="mb-0 ml-2"><strong class="text-uppercase">{{ appName }}</strong> Horizon</h4>
+        <h4 class="mb-0 ml-2">
+          <strong class="text-uppercase">{{ appName }}</strong> Horizon
+        </h4>
 
         <button
           class="btn btn-outline-primary ml-auto"
-          :class="{active: autoLoadsNewEntries}"
+          :class="{ active: autoLoadsNewEntries }"
           v-on:click.prevent="autoLoadNewEntries"
           title="Auto Load Entries"
         >
@@ -35,7 +37,9 @@
             viewBox="0 0 20 20"
             class="icon fill-primary"
           >
-            <path d="M10 3v2a5 5 0 0 0-3.54 8.54l-1.41 1.41A7 7 0 0 1 10 3zm4.95 2.05A7 7 0 0 1 10 17v-2a5 5 0 0 0 3.54-8.54l1.41-1.41zM10 20l-4-4 4-4v8zm0-12V0l4 4-4 4z"></path>
+            <path
+              d="M10 3v2a5 5 0 0 0-3.54 8.54l-1.41 1.41A7 7 0 0 1 10 3zm4.95 2.05A7 7 0 0 1 10 17v-2a5 5 0 0 0 3.54-8.54l1.41-1.41zM10 20l-4-4 4-4v8zm0-12V0l4 4-4 4z"
+            ></path>
           </svg>
         </button>
       </div>
@@ -57,7 +61,9 @@
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="M1 4a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1H2a1 1 0 01-1-1V4zm5 0a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1H7a1 1 0 01-1-1V4zm5 0a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1h-2a1 1 0 01-1-1V4zM1 9a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1H2a1 1 0 01-1-1V9zm5 0a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1H7a1 1 0 01-1-1V9zm5 0a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1h-2a1 1 0 01-1-1V9z" />
+                  <path
+                    d="M1 4a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1H2a1 1 0 01-1-1V4zm5 0a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1H7a1 1 0 01-1-1V4zm5 0a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1h-2a1 1 0 01-1-1V4zM1 9a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1H2a1 1 0 01-1-1V9zm5 0a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1H7a1 1 0 01-1-1V9zm5 0a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1h-2a1 1 0 01-1-1V9z"
+                  />
                 </svg>
                 <span>Services</span>
               </router-link>
@@ -67,13 +73,12 @@
                 active-class="active"
                 to="/dashboard"
                 class="nav-link d-flex align-items-center pt-0"
-                :class="{'disabled': !isActiveApp}"
+                :class="{ disabled: !isActiveApp }"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M0 3c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3zm2 2v12h16V5H2zm8 3l4 5H6l4-5z"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path
+                    d="M0 3c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3zm2 2v12h16V5H2zm8 3l4 5H6l4-5z"
+                  ></path>
                 </svg>
                 <span>Dashboard</span>
               </router-link>
@@ -83,13 +88,12 @@
                 active-class="active"
                 to="/monitoring"
                 class="nav-link d-flex align-items-center"
-                :class="{'disabled': !isActiveApp}"
+                :class="{ disabled: !isActiveApp }"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path
+                    d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+                  ></path>
                 </svg>
                 <span>Monitoring</span>
               </router-link>
@@ -99,13 +103,12 @@
                 active-class="active"
                 to="/metrics"
                 class="nav-link d-flex align-items-center"
-                :class="{'disabled': !isActiveApp}"
+                :class="{ disabled: !isActiveApp }"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M1 10h3v10H1V10zM6 0h3v20H6V0zm5 8h3v12h-3V8zm5-4h3v16h-3V4z"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path
+                    d="M1 10h3v10H1V10zM6 0h3v20H6V0zm5 8h3v12h-3V8zm5-4h3v16h-3V4z"
+                  ></path>
                 </svg>
                 <span>Metrics</span>
               </router-link>
@@ -113,17 +116,43 @@
             <li class="nav-item">
               <router-link
                 active-class="active"
-                to="/recent-jobs"
+                to="/batches"
                 class="nav-link d-flex align-items-center"
-                :class="{'disabled': !isActiveApp}"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M3.94 6.5L2.22 3.64l1.42-1.42L6.5 3.94c.52-.3 1.1-.54 1.7-.7L9 0h2l.8 3.24c.6.16 1.18.4 1.7.7l2.86-1.72 1.42 1.42-1.72 2.86c.3.52.54 1.1.7 1.7L20 9v2l-3.24.8c-.16.6-.4 1.18-.7 1.7l1.72 2.86-1.42 1.42-2.86-1.72c-.52.3-1.1.54-1.7.7L11 20H9l-.8-3.24c-.6-.16-1.18-.4-1.7-.7l-2.86 1.72-1.42-1.42 1.72-2.86c-.3-.52-.54-1.1-.7-1.7L0 11V9l3.24-.8c.16-.6.4-1.18.7-1.7zM10 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path
+                    d="M1 1h18v2H1V1zm0 8h18v2H1V9zm0 8h18v2H1v-2zM1 5h18v2H1V5zm0 8h18v2H1v-2z"
+                  />
                 </svg>
-                <span>Recent Jobs</span>
+                <span>Batches</span>
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link
+                active-class="active"
+                to="/jobs/pending"
+                class="nav-link d-flex align-items-center"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path
+                    d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM7 6h2v8H7V6zm4 0h2v8h-2V6z"
+                  />
+                </svg>
+                <span>Pending Jobs</span>
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link
+                active-class="active"
+                to="/jobs/completed"
+                class="nav-link d-flex align-items-center"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path
+                    d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM6.7 9.29L9 11.6l4.3-4.3 1.4 1.42L9 14.4l-3.7-3.7 1.4-1.42z"
+                  ></path>
+                </svg>
+                <span>Completed Jobs</span>
               </router-link>
             </li>
             <li class="nav-item">
@@ -131,13 +160,12 @@
                 active-class="active"
                 to="/failed"
                 class="nav-link d-flex align-items-center"
-                :class="{'disabled': !isActiveApp}"
+                :class="{ disabled: !isActiveApp }"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm1.41-1.41A8 8 0 1 0 15.66 4.34 8 8 0 0 0 4.34 15.66zm9.9-8.49L11.41 10l2.83 2.83-1.41 1.41L10 11.41l-2.83 2.83-1.41-1.41L8.59 10 5.76 7.17l1.41-1.41L10 8.59l2.83-2.83 1.41 1.41z"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path
+                    d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm1.41-1.41A8 8 0 1 0 15.66 4.34 8 8 0 0 0 4.34 15.66zm9.9-8.49L11.41 10l2.83 2.83-1.41 1.41L10 11.41l-2.83 2.83-1.41-1.41L8.59 10 5.76 7.17l1.41-1.41L10 8.59l2.83-2.83 1.41 1.41z"
+                  ></path>
                 </svg>
                 <span>Failed Jobs</span>
               </router-link>
@@ -155,35 +183,38 @@
 
 <script>
 export default {
-  name: 'Horizon',
+  name: "Horizon",
   computed: {
-    appName () {
-      return this.app.name
+    appName() {
+      return this.app.name;
     },
-    isActiveApp () {
-      return !!Object.keys(this.app).length
-    }
+    isActiveApp() {
+      return !!Object.keys(this.app).length;
+    },
   },
-  data () {
+  data() {
     return {
       app: {},
       alert: {
         type: null,
         autoClose: 0,
-        message: '',
+        message: "",
         confirmationProceed: null,
         confirmationCancel: null,
       },
-      autoLoadsNewEntries: localStorage.autoLoadsNewEntries === '1',
+      autoLoadsNewEntries: localStorage.autoLoadsNewEntries === "1",
     };
   },
-  mounted () {
-    this.app = localStorage.getItem('horizon_app') ? JSON.parse(localStorage.getItem('horizon_app')) : {}
+  mounted() {
+    this.app = localStorage.getItem("horizon_app")
+      ? JSON.parse(localStorage.getItem("horizon_app"))
+      : {};
   },
-  created () {
-    this.$eventBus.$on('change_app', (app) => {
-      this.app = app
-    })
-  }
-}
+  created() {
+    this.$eventBus.$on("change_app", (app) => {
+      this.app = app;
+    });
+  },
+};
 </script>
+

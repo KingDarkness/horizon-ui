@@ -1,6 +1,6 @@
 {
   "name": "horizon-ui",
-  "version": "3.7.2",
+  "version": "5.9.3",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

@@ -1,7 +1,7 @@
 <template>
     <tr>
         <td>
-            <router-link :title="job.name" :to="{ name: $route.params.type+'-jobs-preview', params: { jobId: job.id }}">
+            <router-link :title="job.name" :to="{ name: $parent.type != 'failed' ? 'completed-jobs-preview' : 'failed-jobs-preview', params: { jobId: job.id }}">
                 {{ jobBaseName(job.name) }}
             </router-link>
 
@@ -16,7 +16,7 @@
             <small class="text-muted">
                 Queue: {{job.queue}}
 
-                <span v-if="job.payload.tags && job.payload.tags.length" class="text-break">
+                <span v-if="job.payload.tags.length">
                     | Tags: {{ job.payload.tags && job.payload.tags.length ? job.payload.tags.slice(0,3).join(', ') : '' }}<span v-if="job.payload.tags.length > 3"> ({{ job.payload.tags.length - 3 }} more)</span>
                 </span>
             </small>
@@ -26,12 +26,16 @@
             {{ readableTimestamp(job.payload.pushedAt) }}
         </td>
 
-        <td v-if="$route.params.type=='completed'" class="table-fit">
-            {{ readableTimestamp(job.completed_at) }}
+        <td v-if="$parent.type == 'jobs'" class="table-fit">
+            {{ job.completed_at ? readableTimestamp(job.completed_at) : '-' }}
         </td>
 
-        <td v-if="$route.params.type=='completed'" class="table-fit">
+        <td v-if="$parent.type == 'jobs'" class="table-fit">
             <span>{{ job.completed_at ? (job.completed_at - job.reserved_at).toFixed(2)+'s' : '-' }}</span>
+        </td>
+
+        <td v-if="$parent.type == 'failed'" class="table-fit">
+            {{ readableTimestamp(job.failed_at) }}
         </td>
     </tr>
 </template>
@@ -59,11 +63,8 @@
             },
 
             delayed() {
-                if (this.unserialized && this.unserialized.delay && this.unserialized.delay.date) {
+                if (this.unserialized && this.unserialized.delay) {
                     return moment.tz(this.unserialized.delay.date, this.unserialized.delay.timezone)
-                        .fromNow(true);
-                } else if (this.unserialized && this.unserialized.delay) {
-                    return this.formatDate(this.job.payload.pushedAt).add(this.unserialized.delay, 'seconds')
                         .fromNow(true);
                 }
 

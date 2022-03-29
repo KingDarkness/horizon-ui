@@ -3,8 +3,10 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const routes = [
-  { path: '/', redirect: '/services' },
+const routes = [{
+    path: '/',
+    redirect: '/services'
+  },
 
   {
     path: '/services',
@@ -27,29 +29,34 @@ const routes = [
   {
     path: '/monitoring/:tag',
     component: () => import('@/screens/monitoring/tag'),
-    children: [
-      {
+    children: [{
         path: 'jobs',
         name: 'monitoring-jobs',
         component: () => import('@/screens/monitoring/tag-jobs'),
-        props: { type: 'jobs' },
+        props: {
+          type: 'jobs'
+        },
       },
       {
         path: 'failed',
         name: 'monitoring-failed',
         component: () => import('@/screens/monitoring/tag-jobs'),
-        props: { type: 'failed' },
+        props: {
+          type: 'failed'
+        },
       },
     ],
   },
 
-  { path: '/metrics', redirect: '/metrics/jobs' },
+  {
+    path: '/metrics',
+    redirect: '/metrics/jobs'
+  },
 
   {
     path: '/metrics/',
     component: () => import('@/screens/metrics/index'),
-    children: [
-      {
+    children: [{
         path: 'jobs',
         name: 'metrics-jobs',
         component: () => import('@/screens/metrics/jobs'),
@@ -69,14 +76,20 @@ const routes = [
   },
 
   {
-    path: '/recent-jobs',
-    name: 'recent-jobs',
+    path: '/jobs/:type',
+    name: 'jobs',
     component: () => import('@/screens/recentJobs/index'),
   },
 
   {
-    path: '/recent-jobs/:jobId',
-    name: 'recent-jobs-preview',
+    path: '/jobs/pending/:jobId',
+    name: 'pending-jobs-preview',
+    component: () => import('@/screens/recentJobs/job'),
+  },
+
+  {
+    path: '/jobs/completed/:jobId',
+    name: 'completed-jobs-preview',
     component: () => import('@/screens/recentJobs/job'),
   },
 
@@ -101,7 +114,9 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.name !== 'services' && !Object.keys(window.Horizon).length) {
-    next({ name: 'services' })
+    next({
+      name: 'services'
+    })
   }
   next()
 })
